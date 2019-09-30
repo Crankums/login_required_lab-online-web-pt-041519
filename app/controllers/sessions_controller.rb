@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :current_user
+
   def new
   end
 
@@ -15,7 +16,6 @@ class SessionsController < ApplicationController
   private
 
   def current_user
-    @user = User.find_by(id: params[:id])
-    @user.name
+    session[:name]
   end
 end
