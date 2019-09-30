@@ -11,4 +11,10 @@ class SessionsController < ApplicationController
       session.delete :name
     end
   end
+
+  private
+
+  def current_user
+    @user = User.find_by(id: params[:id])
+  end
 end
