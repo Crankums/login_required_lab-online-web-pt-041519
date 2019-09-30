@@ -16,5 +16,6 @@ class SessionsController < ApplicationController
 
   def current_user
     @user = User.find_by(id: params[:id])
+    @user.name
   end
 end
